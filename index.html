@@ -7,9 +7,18 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/fontawesome.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/animate.css">
     <title>Restaurante - Seja Bem-Vindo!</title>
 </head>
 <body>
+
+    <div class="container-mensagens" id="container-mensagens"></div>
+    
+    <a class="botao-carrinho hidden" onclick="cardapio.metodos.abrirCarrinho(true)">
+        <div class="badge-total-carrinho hidden">0</div>
+        <i class="fa fa-shopping-bag"></i>
+    </a>
+
     <section class="header">
         <div class="container">
             <nav class="navbar navbar-expand-lg pl-0 pr-0">
@@ -36,8 +45,9 @@
                             <a href="#depoimentos" class="nav-link"><b>Depoimentos</b></a>
                         </li>
                     </ul>
-                    <a class="btn btn-white btn-icon"> 
+                    <a class="btn btn-white btn-icon" onclick="cardapio.metodos.abrirCarrinho(true)"> 
                         Meu Carrinho<span class="icon">
+                            <div class="container-total-carrinho hidden">0</div>
                             <i class="fa fa-shopping-bag"></i>
                         </span>
                     </a>
@@ -352,7 +362,7 @@
     <div class="modal-full hidden" id="modalCarrinho">
         <div class="m-header">
             <div class="container">
-                <a class="btn btn-white btn-sm float-right">
+                <a class="btn btn-white btn-sm float-right btn-color" onclick="cardapio.metodos.abrirCarrinho(false)">
                     Fechar
                 </a>
                 <div class="etapas">
@@ -370,117 +380,6 @@
             <div class="container">
                 <div id="itensCarrinho" class="row mr-0 ml-0 hidden">
 
-                    <div class="col-12 item-carrinho">
-                        <div class="img-produto">
-                            <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg">
-                        </div>
-                        <div class="dados-produto">
-                            <p class="title-produto"><b>Nome do produto</b></p>
-                            <p class="price-produto"><b>R$ 149,90</b></p>
-                        </div>
-                        <div class="add-carrinho">
-                            <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                            <span class="add-numero-itens">0</span>
-                            <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                            <span class="btn btn-remove"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="col-12 item-carrinho">
-                        <div class="img-produto">
-                            <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg">
-                        </div>
-                        <div class="dados-produto">
-                            <p class="title-produto"><b>Nome do produto</b></p>
-                            <p class="price-produto"><b>R$ 149,90</b></p>
-                        </div>
-                        <div class="add-carrinho">
-                            <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                            <span class="add-numero-itens">0</span>
-                            <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                            <span class="btn btn-remove"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="col-12 item-carrinho">
-                        <div class="img-produto">
-                            <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg">
-                        </div>
-                        <div class="dados-produto">
-                            <p class="title-produto"><b>Nome do produto</b></p>
-                            <p class="price-produto"><b>R$ 149,90</b></p>
-                        </div>
-                        <div class="add-carrinho">
-                            <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                            <span class="add-numero-itens">0</span>
-                            <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                            <span class="btn btn-remove"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="col-12 item-carrinho">
-                        <div class="img-produto">
-                            <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg">
-                        </div>
-                        <div class="dados-produto">
-                            <p class="title-produto"><b>Nome do produto</b></p>
-                            <p class="price-produto"><b>R$ 149,90</b></p>
-                        </div>
-                        <div class="add-carrinho">
-                            <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                            <span class="add-numero-itens">0</span>
-                            <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                            <span class="btn btn-remove"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="col-12 item-carrinho">
-                        <div class="img-produto">
-                            <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg">
-                        </div>
-                        <div class="dados-produto">
-                            <p class="title-produto"><b>Nome do produto</b></p>
-                            <p class="price-produto"><b>R$ 149,90</b></p>
-                        </div>
-                        <div class="add-carrinho">
-                            <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                            <span class="add-numero-itens">0</span>
-                            <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                            <span class="btn btn-remove"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="col-12 item-carrinho">
-                        <div class="img-produto">
-                            <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg">
-                        </div>
-                        <div class="dados-produto">
-                            <p class="title-produto"><b>Nome do produto</b></p>
-                            <p class="price-produto"><b>R$ 149,90</b></p>
-                        </div>
-                        <div class="add-carrinho">
-                            <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                            <span class="add-numero-itens">0</span>
-                            <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                            <span class="btn btn-remove"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
-
-                    <div class="col-12 item-carrinho">
-                        <div class="img-produto">
-                            <img src="./img/cardapio/burguers/burger-au-poivre-kit-4-pack.3ca0e39b02db753304cd185638dad518.jpg">
-                        </div>
-                        <div class="dados-produto">
-                            <p class="title-produto"><b>Nome do produto</b></p>
-                            <p class="price-produto"><b>R$ 149,90</b></p>
-                        </div>
-                        <div class="add-carrinho">
-                            <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                            <span class="add-numero-itens">0</span>
-                            <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                            <span class="btn btn-remove"><i class="fa fa-times"></i></span>
-                        </div>
-                    </div>
 
                 </div>
 
@@ -541,7 +440,7 @@
                     </div> 
                 </div>
 
-                <div id="resumoCarrinho" class="row mr-0 ml-0">
+                <div id="resumoCarrinho" class="row mr-0 ml-0 hidden">
                     <div class="col-12">
                         <p class="title-carrinho mt-4">
                             <b>Itens do pedido:</b>
@@ -604,28 +503,28 @@
                 <div class="container-total text-right mb-4">
                     <p class="mb-0">
                         <span>Subtotal:</span>
-                        <span id="lblsubTotal">R$ 95,00</span>
+                        <span id="lblsubTotal">R$ 0,00</span>
                     </p>
                     <p class="mb-0 texto-entrega">
                         <span><i class="fas fa-motorcycle"></i>&nbsp; Entrega</span>
-                        <span id="lblValorEntrega">+ 5,00  </span>
+                        <span id="lblValorEntrega">+ 0,00  </span>
                     </p>
                     <p class="mb-0 texto-total">
                         <span><b>Total:</b></span>
-                        <span class="valorTotal" id="lblValorTotal"><b>R$ 100,00</b></span>
+                        <span class="valorTotal"><b id="lblValorTotal">R$ 0,00</b></span>
                     </p>
                 </div>
-                <a class="btn btn-yellow float-right" id="btnEtapaPedido">
+                <a onclick="cardapio.metodos.carregarEtapa(2)" class="btn btn-yellow float-right" id="btnEtapaPedido">
                     Continuar 
                 </a>
-                <a class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
+                <a onclick="cardapio.metodos.carregarEtapa(3)" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
                     Revisar Pedido
                 </a>
-                <a class="btn btn-yellow float-right hidden" id="btnEtapaResumo">
+                <a onclick="" class="btn btn-yellow float-right hidden" id="btnEtapaResumo">
                     Enviar Pedido
                 </a>
 
-                <a class="btn btn-voltar btn-white float-right mr-3 hidden" id="btnVoltar">
+                <a onclick="cardapio.metodos.voltarEtapa()" class="btn btn-voltar btn-white float-right mr-3 btn-color hidden" id="btnVoltar">
                     Voltar 
                 </a>
             </div>
