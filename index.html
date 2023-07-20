@@ -388,7 +388,9 @@
                         <div class="form-group container-cep">
                             <label>CEP:</label>
                             <input id="txtCEP" type="text" class="form-control">
-                            <button class="btn search btn-yellow btn-sm"><i class="fa fa-search"></i></button>
+                            <a class="btn search btn-yellow btn-sm" onclick="cardapio.metodos.buscarCep()">
+                                <i class="fa fa-search"></i>
+                            </a>
                         </div>
                     </div>
 
@@ -435,7 +437,33 @@
                             <select id="ddlUf" class="form-control">
                                 <option value="-1">...</option>
                                 <option value="AC">Acre (AC)</option>
-                            </select>
+                                <option value="AL">Alagoas (AL)</option>
+                                <option value="AP">Amapá (AP)</option>
+                                <option value="AM">Amazonas (AM)</option>
+                                <option value="BA">Bahia (BA)</option>
+                                <option value="CE">Ceará (CE)</option>
+                                <option value="DF">Distrito Federal (DF)</option>
+                                <option value="ES">Espírito Santo (ES)</option>
+                                <option value="GO">Goiás (GO)</option>
+                                <option value="MA">Maranhão (MA)</option>
+                                <option value="MT">Mato Grosso (MT)</option>
+                                <option value="MS">Mato Grosso do Sul (MS)</option>
+                                <option value="MG">Minas Gerais (MG)</option>
+                                <option value="PA">Pará (PA)</option>
+                                <option value="PB">Paraíba (PB)</option>
+                                <option value="PR">Paraná (PR)</option>
+                                <option value="PE">Pernambuco (PE)</option>
+                                <option value="PI">Piauí (PI)</option>
+                                <option value="RJ">Rio de Janeiro (RJ)</option>
+                                <option value="RN">Rio Grande do Norte (RN)</option>
+                                <option value="RS">Rio Grande do Sul (RS)</option>
+                                <option value="RO">Rondônia (RO)</option>
+                                <option value="RR">Roraima (RR)</option>
+                                <option value="SC">Santa Catarina (SC)</option>
+                                <option value="SP">São Paulo (SP)</option>
+                                <option value="SE">Sergipe (SE)</option>
+                                <option value="TO">Tocantins (TO)</option>
+                                </select>
                         </div>
                     </div> 
                 </div>
@@ -449,25 +477,6 @@
 
                     <div class="col-12">
                         <div class="row" id="listaItensResumo">
-
-                            <div class="col-12 item-carrinho resumo">
-                                <div class="img-produto-resumo">
-                                    <img src="./img/cardapio/bebidas/chickpea-chiller-kit-for-6.4310765c71ba524b5462ea9330d32446.jpg">
-                                </div>
-                                <div class="dados-produto">
-                                    <p class="title-produto-resumo">
-                                        <b>Nome do produto</b>
-                                    </p>
-                                    <p class="price-produto-resumo">
-                                        <b>R$ 100,00</b>
-                                    </p>
-                                </div>
-
-                                    <p class="quantidade-produto-resumo">
-                                        x <b>3</b>
-                                    </p>
-                                
-                            </div>
                         </div>
                     </div>
                     <div class="col-12">
@@ -514,10 +523,10 @@
                         <span class="valorTotal"><b id="lblValorTotal">R$ 0,00</b></span>
                     </p>
                 </div>
-                <a onclick="cardapio.metodos.carregarEtapa(2)" class="btn btn-yellow float-right" id="btnEtapaPedido">
+                <a onclick="cardapio.metodos.carregarEndereco()" class="btn btn-yellow float-right" id="btnEtapaPedido">
                     Continuar 
                 </a>
-                <a onclick="cardapio.metodos.carregarEtapa(3)" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
+                <a onclick="cardapio.metodos.resumoPedido()" class="btn btn-yellow float-right hidden" id="btnEtapaEndereco">
                     Revisar Pedido
                 </a>
                 <a onclick="" class="btn btn-yellow float-right hidden" id="btnEtapaResumo">
@@ -543,40 +552,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-<!-- Acre (AC)
-Alagoas (AL)
-Amapá (AP)
-Amazonas (AM)
-Bahia (BA)
-Ceará (CE)
-Distrito Federal (DF)
-Espírito Santo (ES)
-Goiás (GO)
-Maranhão (MA)
-Mato Grosso (MT)
-Mato Grosso do Sul (MS)
-Minas Gerais (MG)
-Pará (PA)
-Paraíba (PB)
-Paraná (PR)
-Pernambuco (PE)
-Piauí (PI)
-Rio de Janeiro (RJ)
-Rio Grande do Norte (RN)
-Rio Grande do Sul (RS)
-Rondônia (RO)
-Roraima (RR)
-Santa Catarina (SC)
-São Paulo (SP)
-Sergipe (SE)
-Tocantins (TO) -->
